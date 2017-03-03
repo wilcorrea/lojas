@@ -1,0 +1,6 @@
+{
+    "require": {
+        "lukasdev/drouter": "^2.4"
+		"phpmailer/phpmailer": "^5.2"
+    }
+}

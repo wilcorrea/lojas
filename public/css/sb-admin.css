@@ -1,0 +1,217 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+.btn[type=submit]:focus, .btn[type=button]:focus, .inputfile[type=file]:focus, a:focus {
+	outline: none;
+	-moz-outline-style: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+	margin: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+select:hover {
+	cursor: pointer;
+}
+select option {
+    margin: 2px;
+	padding: 2px;
+}
+td, .navbar-brand, .panel-heading, .panel-body {
+	cursor: default;
+}
+.foto {
+	padding: 0px;
+}
+.excluir_foto {
+	border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+}
+img { 
+	border: 0;
+}
+body {
+	background-color: #f8f8f8;
+}
+p.icone {
+	font-size: 25px;
+	margin: 0;
+}
+#wrapper {
+	width: 100%;
+}
+#page-wrapper {
+	padding: 0 15px;
+	min-height: 568px;
+	background-color: white;	
+}
+.logo {
+	position: absolute;
+	background-image: url(../img/logotipo-background.png);
+	width: 520px;
+	height: 520px;
+	float: right;
+	margin-bottom: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+@media (min-width: 768px) {
+	#page-wrapper {
+		position: inherit;
+		margin: 0 0 0 250px;
+		padding: 0 30px;
+		border-left: 1px solid #e7e7e7;
+	}
+}
+@media (max-width: 1200px) {
+	.envio .col-lg-6 {
+		width: 50%;
+		float: left;
+	}
+}
+#textarea {
+	resize: none;
+}
+#resultado_cliente, #resultado_cliente a {
+	width: 100%;
+	margin-top: 15px;
+	padding: 5px;
+	background-color: #eeeeee;
+	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+}
+#resultado_valores a {
+	cursor: pointer;
+}
+.excluir_valor, .excluir_produto {
+	cursor: pointer;
+}
+.form-group {
+	margin-bottom: 0px;
+}
+.navbar-top-links {
+	margin-right: 0;
+}
+.navbar-top-links li {
+	display: inline-block;
+}
+.navbar-top-links li:last-child {
+	margin-right: 15px;
+}
+.navbar-top-links li a {
+	  padding: 15px;
+	  min-height: 50px;
+}
+.navbar-top-links .dropdown-menu li {
+	display: block;
+}
+.navbar-top-links .dropdown-menu li:last-child {
+	margin-right: 0;
+}
+.navbar-top-links .dropdown-menu li a {
+	padding: 3px 20px;
+	min-height: 0;
+}
+.navbar-top-links .dropdown-menu li a div {
+	white-space: normal;
+}
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+	width: 310px;
+	min-width: 0;
+}
+.navbar-top-links .dropdown-messages {
+	margin-left: 5px;
+}
+.navbar-top-links .dropdown-tasks {
+	margin-left: -59px;
+}
+.navbar-top-links .dropdown-alerts {
+	margin-left: -123px;
+}
+.navbar-top-links .dropdown-user {
+	right: 0;
+	left: auto;
+}
+.sidebar .sidebar-nav.navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+.sidebar .sidebar-search {
+	padding: 15px;
+}
+.sidebar ul li {
+	border-bottom: 1px solid #e7e7e7;
+}
+.sidebar ul li a.active {
+	background-color: #eeeeee;
+}
+.sidebar .arrow {
+	float: right;
+}
+.sidebar .fa.arrow:before {
+	content: "\f104";
+}
+.sidebar .active > a > .fa.arrow:before {
+	content: "\f107";
+}
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+	border-bottom: none !important;
+}
+.sidebar .nav-second-level li a {
+	padding-left: 37px;
+}
+.sidebar .nav-third-level li a {
+	padding-left: 52px;
+}
+@media (min-width: 768px) {
+	.sidebar {
+		z-index: 1;
+		position: absolute;
+		width: 250px;
+		margin-top: 51px;
+	}
+	.navbar-top-links .dropdown-messages,
+	.navbar-top-links .dropdown-tasks,
+	.navbar-top-links .dropdown-alerts {
+		margin-left: auto;
+	}
+}
+.btn-outline {
+	color: inherit;
+	background-color: transparent;
+}
+.btn-primary.btn-outline {
+	color: #2e6da4;
+}
+.btn-danger.btn-outline {
+	color: #d43f3a;
+}
+.btn-primary.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+	color: white;
+}
+.login-panel {
+	margin-top: 25%;
+}
