@@ -39,7 +39,7 @@
 					$url = '/redefinir&token='.$codigo;
 					$mensagem = '<h2>Esqueci minha senha :(</h2><p>Olá <strong>'.$nome.'</strong>, foi solicitado ajuda para lembrar sua senha para login em nosso site, não podemos enviar a senha por e-mail pois ela é criptografada para sua segurança, <strong>MAS</strong> você pode trocar a senha clicando no link abaixo. Se você não solicitou recuperar sua senha, por favor desconsidere este e-mail!</p><p><a href="'.$url.'" target="_blank">Clique aqui</a></p><br/><p>Atenciosamente, <strong>Pague com Pontos</strong></p><br/><p>Mensagem enviada dia <strong>'.date('d/m/Y H:i').'</strong></p>';
 					
-					$enviar = new Email('Esqueci minha senha', $mensagem, 'jtec-condeuba@bol.com.br', 'Pague com Pontos', $email, $nome);
+					$enviar = new Email('Esqueci minha senha', $mensagem, 'teste@bol.com.br', 'EMPRESA', $email, $nome);
                     $retorno = $enviar->enviar();
 					return $retorno;
 				}
