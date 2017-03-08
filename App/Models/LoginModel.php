@@ -1,6 +1,8 @@
 <?php
 	namespace App\Models;
     use App\Models\Model;
+	use App\Session;
+	use App\Cookie;
 	
 	class LoginModel extends Model
 	{
@@ -14,8 +16,11 @@
 			$dados = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 			if (count($dados) == 1 AND $dados[0]['liberado'] == 1) {
 				if (password_verify($senha, $dados[0]['senha'])) {
-					// Pega o id do lojista/loja para posteriores cadastros de produtos,etc
-					$_SESSION['acesso_loja'] = $dados[0]['id'];
+					$token = Session::create(['acesso_loja' => $dados[0]['id']]);
+					if($remember):
+						Cookie::set('__dmz', $token);
+					endif;
+					
 					$retorno['resposta'] = 'logou';
 				}
 			} elseif(count($dados) == 1 AND $dados[0]['liberado'] == 0) {

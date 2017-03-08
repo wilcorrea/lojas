@@ -1,12 +1,13 @@
 <?php
     require 'App/Session.php';
+    require 'App/Cookie.php';
     require 'App/Loader.php';
     require 'vendor/autoload.php';
 	use App\Session;
+	use App\Cookie;
     use App\Loader;
 	
-	$session = new Session();
-    $session->sec_session_start();
+	Session::start();
 	
     $loader = new Loader();
     $loader->register();

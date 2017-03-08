@@ -3,6 +3,8 @@
 	use App\Controllers\Controller;
 	use App\Models\LoginModel as Login;
 	use App\Models\EmailModel as Email;
+	use App\Session;
+	use App\Cookie;
 	
 	class LoginController extends Controller
 	{
