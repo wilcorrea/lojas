@@ -1,6 +1,6 @@
 <?php
 	namespace App\Helpers;
-	require_once DIR.'\..\..\vendor\phpmailer\phpmailer\PHPMailerAutoload.php';
+	use PHPMailer;
 	
 	class Email
 	{

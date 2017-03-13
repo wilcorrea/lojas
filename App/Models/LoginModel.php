@@ -1,6 +1,5 @@
 <?php
 	namespace App\Models;
-    use App\Models\Model;
 	use App\Session;
 	use App\Cookie;
 	
@@ -9,6 +8,7 @@
 		public function login(){
 			$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 			$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+			$remember = filter_input(INPUT_POST, 'lembrar', FILTER_SANITIZE_STRING);
 			
 			$stmt = $this->db->prepare("SELECT `a`.`liberado`, `l`.`id`, `l`.`senha` FROM loja_lojistas as l INNER JOIN admin_lojas as a ON `a`.`id_loja` = `l`.`id` WHERE `l`.`email` = :email");
 			$stmt->bindValue(':email', $email, \PDO::PARAM_STR);

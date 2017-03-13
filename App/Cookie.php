@@ -13,15 +13,15 @@
 			return setcookie($name, $value, $expire, $path, $domain, $secure, $httpOnly);
 		}
 		
-		public static function get($name, $default){
+		public static function get($name, $default = null){
 			return isset($_COOKIE[$name]) ? $_COOKIE[$name] : $default;
 		}
 		
 		public function destroy($name, $expire = null, $path = null, $domain = null, $secure = null, $httpOnly = null){
-			if(isset($_COOKIE[$name])):
+			if (isset($_COOKIE[$name])) {
 				unset($_COOKIE[$name]);
 				return static::set($name, null, $expire, $path, $domain, $secure, $httpOnly);
-			endif;
+			}
 			return false;
 		}
 	}

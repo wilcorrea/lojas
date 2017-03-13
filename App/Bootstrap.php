@@ -1,13 +1,16 @@
 <?php
-    require 'App/Session.php';
-    require 'App/Cookie.php';
-    require 'App/Loader.php';
-    require 'vendor/autoload.php';
+	require 'App/Session.php';
+	require 'App/Cookie.php';
+	require 'App/Loader.php';
+	require 'vendor/autoload.php';
 	use App\Session;
 	use App\Cookie;
-    use App\Loader;
+	use App\Loader;
 	
-	Session::start();
+	$token = Cookie::get('__dmz');
+	if ($token) {
+		Session::start($token);
+	}
 	
     $loader = new Loader();
     $loader->register();

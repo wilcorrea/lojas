@@ -1,15 +1,14 @@
 <?php
 	namespace App\Controllers;
-	use App\Controllers\Controller;
+	//use App\Controllers\Controller;
 	use App\Models\LoginModel as Login;
 	use App\Models\EmailModel as Email;
 	use App\Session;
-	use App\Cookie;
 	
 	class LoginController extends Controller
 	{
 		public function pagina(){
-			if (isset($_SESSION['acesso_loja'])) {
+			if (Session::get('acesso_loja')) {
 				$this->router->redirectTo('inicio');
 			} else {
 				$this->render->load('loja/login.php', [], false);
@@ -17,16 +16,16 @@
 		}
 		
 		public function login($dados){
-			if($dados['token'] == $_SESSION['token']):
+			//if($dados['token'] == $_SESSION['token']):
 				$login = new Login($this->db);
 				$resposta = $login->login($dados);
 				echo json_encode($resposta);
-			endif;
+			//endif;
 		}
 		
 		public function sair(){
-			if (isset($_SESSION['acesso_loja'])) {
-				unset($_SESSION['acesso_loja']);
+			if (Session::get('acesso_loja')) {
+				Session::destroy('acesso_loja');
 				$this->router->redirectTo('login_loja');
 			}
 		}

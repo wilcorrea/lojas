@@ -12,19 +12,19 @@
 			self::$token = uniqid();
 			static::$data = $data;
 			
-			if(static::write()):
+			if (static::write()) {
 				return self::$token;
-			endif;
+			}
 			throw new Exception("Can`t create a session in `" . self::$token . "`");
 		}
 		
 		public static function start($token){
-			if(!file_exists(static::filename($token))):
+			if (!file_exists(static::filename($token))) {
 				throw new Exception("The session `{$token}` no longer exists");
-			endif;
-			if(!static::check($token)):
+			}
+			if (!static::check($token)) {
 				throw new Exception("The session `{$token}` is expired");
-			endif;
+			}
 			self::$token = $token;
 			static::$data = static::read();
 			
@@ -41,27 +41,27 @@
 		}
 		
 		public static function destroy($token = null){
-			if(!$token):
+			if (!$token) {
 				$token = self::$token;
-			endif;
+			}
 			return unlink(self::filename($token));
 		}
 		
 		public static function check($token, $now = null){
 			$check = false;
 			$filename = static::filename($token);
-			if(file_exists($filename)):
+			if (file_exists($filename)) {
 				$check = true;
 				$now = ($now ? $now : time());
 				$diff = round($now - filemtime(static::filename($token)));
-				if($diff > static::LIFE_TIME):
+				if ($diff > static::LIFE_TIME) {
 					$check = false;
 					static::destroy($token);
-				endif;
-				if($check):
+				}
+				if ($check) {
 					touch($filename);
-				endif;
-			endif;
+				}
+			}
 			return $check;
 		}
 		
@@ -74,9 +74,9 @@
 		}
 		
 		private static function filename($token){
-			if(defined('__DIR_SESSION__')):
-				return __DIR_SESSION__ . '/' . $token;
-			endif;
-			throw new Exception("The constant `__DIR_SESSION__` is not defined");
+			if (defined('DIR_SESSION')) {
+				return DIR_SESSION . '/session/' . $token;
+			}
+			throw new Exception("The constant `DIR_SESSION` is not defined");
 		}
 	}
